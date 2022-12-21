@@ -82,11 +82,11 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
+          path: "./"
           
       # Setup the right theme config.
       - name: List folders
         run: |
-          cd docs
           ls
 
       # Build the VuePress site
