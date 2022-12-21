@@ -8,14 +8,15 @@ jobs:
       # Check out the repository
       - name: Check out repository
         uses: actions/checkout@v2
+        with:
+          repository: Kurczak1233/VuePress-CI-CD
+      # # Install VuePress
+      # - name: Install VuePress
+      #   run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress
 
-      # Install VuePress
-      - name: Install VuePress
-        run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress
-
-      # Install necessary packages
-      - name: Install necessary packages
-        run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
+      # # Install necessary packages
+      # - name: Install necessary packages
+      #   run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
       # Setup the right theme config.
       - name: List folders
@@ -92,7 +93,7 @@ jobs:
           cp tailwind.config.js $GITHUB_WORKSPACE/
           cd docs
           ls
-          cp .vuepress $GITHUB_WORKSPACE/docs
+          cp -R .vuepress $GITHUB_WORKSPACE/docs
 # 
       # Build the VuePress site
       - name: Build VuePress site
@@ -108,3 +109,6 @@ jobs:
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+## Zamiast budować to tutaj, zbuduj to tam z package.json i wszystkim od razu.
