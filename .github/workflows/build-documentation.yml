@@ -23,7 +23,7 @@ jobs:
       # Setup the right theme config.
 
       - name: Check if docs / .vuepress exists
-        run: mkdir docs && cd docs && mkdir .vuepress cd .vuepress
+        run: cd docs && mkdir .vuepress cd .vuepress
 
       - name: Inject config into config.js file
         run:  |
