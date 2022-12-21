@@ -11,7 +11,7 @@ jobs:
 
       # Install VuePress
       - name: Install VuePress
-        run: npm install -D vuepress@next
+        run: npm install -D vuepress@next && npm i @vuepress/cli
 
       # Create a VuePress site
       - name: Create VuePress site
