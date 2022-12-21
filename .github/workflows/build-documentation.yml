@@ -1,6 +1,8 @@
 name: Build and Deploy VuePress Site
 
 on: [push]
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,79 +12,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Kurczak1233/VuePress-CI-CD
-      # Install VuePress
+
+      # Install VuePress CLI and vuepress
       - name: Install VuePress
         run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress && npm i vuepress-theme-bcc-common-components
 
-      # # Install necessary packages
-      # - name: Install necessary packages
-      #   run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
-
-      # - name: List folders
-      #   run: |
-      #     cat package.json
-
-      # - name: Navigate to multiple subfolders
-      #   run: |
-      #     cd docs
-      #     mkdir .vuepress
-      #     cp test/* .vuepress/
-      #     cd .vuepress
-      #     echo "import { defineUserConfig } from 'vuepress';" >> config.js
-      #     echo "import { getDirname } from '@vuepress/utils';" >> config.js
-      #     echo "import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';" >> config.js
-      #     echo "import { bccCustomTheme } from 'vuepress-theme-bcc-common-components/config.js';" >> config.js
-      #     echo "import { findPathIcons } from 'vuepress-theme-bcc-common-components/helpers/findPathIcons.js';" >> config.js
-      #     echo "import { getSideBarItems } from 'vuepress-theme-bcc-common-components/helpers/getSidebarItems.js';" >> config.js
-      #     echo "const __dirname = getDirname(import.meta.url);" >> config.js
-      #     echo "export default defineUserConfig({" >> config.js
-      #     echo "lang: 'en-US'," >> config.js
-      #     echo "title: 'BCC Developer Documentation'," >> config.js
-      #     echo "description: 'Package documentation'," >> config.js
-      #     echo "base: '/bcc-docs-template/'," >> config.js
-      #     echo "theme: bccCustomTheme({" >> config.js
-      #     echo "logoDark: 'bccLogoWhite.png'," >> config.js
-      #     echo "logo: 'bccLogoDark.png'," >> config.js
-      #     echo "sidebar: getSideBarItems(__dirname)," >> config.js
-      #     echo "icons: findPathIcons(__dirname)," >> config.js
-      #     echo "navbar: [" >> config.js
-      #     echo "{" >> config.js
-      #     echo "text: 'Setup'," >> config.js
-      #     echo "link: '/Setup.md'," >> config.js
-      #     echo "}," >> config.js
-      #     echo "]," >> config.js
-      #     echo "repo: 'Kurczak1233/bcc-docs-template'," >> config.js
-      #     echo "docsRepo: 'Kurczak1233/bcc-docs-template'," >> config.js
-      #     echo "docsDir: 'docs'," >> config.js
-      #     echo "docsBranch: 'main'," >> config.js
-      #     echo "editLinks: true," >> config.js
-      #     echo "editLinkText: 'Edit this page on github'," >> config.js
-      #     echo "prev: true," >> config.js
-      #     echo "next: true," >> config.js
-      #     echo "})," >> config.js
-      #     echo "plugins: [" >> config.js
-      #     echo "mdEnhancePlugin({" >> config.js
-      #     echo "codetabs: true," >> config.js
-      #     echo "})," >> config.js
-      #     echo "]," >> config.js
-      #     echo "});" >> config.js
-      #     cat config.js
-
-      # - name: Add scripts to package.json
-      #   run: |
-      #     jq '.scripts |= .+ { "docs:dev": "vuepress dev docs", "docs:build": "vuepress build docs" }' package.json > package.json.tmp
-      #     mv package.json.tmp package.json
-
-      # Pull the repository base config
+      # Pull the repository documentation and push it to the source folder
       - name: Check out test repository
         uses: actions/checkout@v2
         with:
-        #   repository: Kurczak1233/VuePress-CI-CD
-        #   ref: main
           path: source
 
-
-      # Setup the right theme config.
+      # Copy the source documentation to the docs
       - name: List folders
         run: |
           cd source
@@ -93,6 +34,7 @@ jobs:
       - name: Build VuePress site
         run: npm i && yarn docs:build
 
+      # Deploy build
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
