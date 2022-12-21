@@ -82,13 +82,13 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
-          path: bcc-docs-template
+          path: copiedFiles
 
       # Setup the right theme config.
       - name: List folders
         run: |
-          ls
-          cd bcc-docs-template
+          cp copiedFiles/docs/* $GITHUB_WORKSPACE/docs
+          cd copiedFiles
           ls
 
       # Build the VuePress site
