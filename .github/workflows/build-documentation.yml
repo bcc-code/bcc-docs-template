@@ -26,6 +26,10 @@ jobs:
         run: |
           ls
 
+      - name: List folders
+        run: |
+          cat package.json
+
       - name: Navigate to multiple subfolders
         run: |
           cd docs
@@ -42,7 +46,7 @@ jobs:
           echo "lang: "en-US"," >> config.js
           echo "title: "BCC Developer Documentation"," >> config.js
           echo "description: "Package documentation"," >> config.js
-          echo "base: "/bcc-code.github.io/"," >> config.js
+          echo "base: "/bcc-docs-template/"," >> config.js
           echo "theme: bccCustomTheme({" >> config.js
           echo "logoDark: "bccLogoWhite.png"," >> config.js
           echo "logo: "bccLogoDark.png"," >> config.js
@@ -54,10 +58,10 @@ jobs:
           echo "link: "/Setup.md"," >> config.js
           echo "}," >> config.js
           echo "]," >> config.js
-          echo "repo: "Kurczak1233/bcc-code.github.io"," >> config.js
-          echo "docsRepo: "Kurczak1233/bcc-code.github.io"," >> config.js
+          echo "repo: "Kurczak1233/bcc-docs-template"," >> config.js
+          echo "docsRepo: "Kurczak1233/bcc-docs-template"," >> config.js
           echo "docsDir: "docs"," >> config.js
-          echo "docsBranch: "master"," >> config.js
+          echo "docsBranch: "main"," >> config.js
           echo "editLinks: true," >> config.js
           echo "editLinkText: "Edit this page on github"," >> config.js
           echo "prev: true," >> config.js
