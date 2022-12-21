@@ -11,6 +11,14 @@ jobs:
         with:
           repository: Kurczak1233/bcc-docs-template
           ref: main
+      - name: Get specific files
+        run: |
+          cp testToImport/* $GITHUB_WORKSPACE/files
+
+        
+        with:
+          repository: Kurczak1233/bcc-docs-template
+          ref: main
 
       # Install VuePress
       - name: Install VuePress
