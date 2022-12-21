@@ -30,6 +30,7 @@ jobs:
         run: |
           cd docs
           ls
+          mkdir .vuepress
           cd .vuepress
           echo "const foo = 'bar';" >> config.js
           echo "console.log(foo);" >> config.js
