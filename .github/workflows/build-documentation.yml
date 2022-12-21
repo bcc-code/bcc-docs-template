@@ -96,7 +96,7 @@ jobs:
 
       # Build the VuePress site
       - name: Build VuePress site
-        run: yarn docs:build
+        run: npm i && yarn docs:build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
