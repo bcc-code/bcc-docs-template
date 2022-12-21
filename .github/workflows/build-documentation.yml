@@ -82,17 +82,8 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
-          path: copiedFiles
+          path: ./
           
-      # - name: Get specific files
-      #   run: |
-      #     cp testToImport/* $GITHUB_WORKSPACE/
-      # - name: Pull specific files
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: tailwind configuration
-      #     path: ./testToImport
-
       # Setup the right theme config.
       - name: List folders
         run: |
