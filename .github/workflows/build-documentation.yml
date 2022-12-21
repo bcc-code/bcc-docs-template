@@ -88,9 +88,11 @@ jobs:
       - name: List folders
         run: |
           cd bcc-docs-template
+          cd docs
           ls
-
-#         cp bcc-docs-template/docs/* $GITHUB_WORKSPACE/docs
+          cp bcc-docs-template/postcss.config.js $GITHUB_WORKSPACE/
+          cp bcc-docs-template/tailwind.config.js $GITHUB_WORKSPACE/
+# 
       # Build the VuePress site
       - name: Build VuePress site
         run: yarn docs:build
