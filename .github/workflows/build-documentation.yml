@@ -88,7 +88,7 @@ jobs:
       - name: List folders
         run: |
           ls
-          cd docs
+          cd bcc-docs-template
           ls
 
       # Build the VuePress site
