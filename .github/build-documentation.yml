@@ -1,0 +1,30 @@
+name: Build and Deploy VuePress Site
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      # Install VuePress
+      - name: Install VuePress
+        run: npm install -g vuepress
+
+      # Create a VuePress site
+      - name: Create VuePress site
+        run: vuepress init docs
+
+      # Build the VuePress site
+      - name: Build VuePress site
+        run: vuepress build docs
+
+      # Deploy the built site as an asset to the repository
+      - name: Deploy built site
+        uses: actions/upload-artifact@v1
+        with:
+          name: vuepress-site
+          path: docs/.vuepress/dist
