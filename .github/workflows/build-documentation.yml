@@ -22,6 +22,17 @@ jobs:
         run: npm i stylus && npm i vuepress-plugin-md-enhance && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
       # Setup the right theme config.
 
+      - name: Check if docs / .vuepress exists
+        run: mkdir docs && cd docs && mkdir .vuepress cd .vuepress
+
+      - name: Inject config into config.js file
+        run:  |
+          echo "const foo = 'bar';" >> config.js
+          echo "console.log(foo);" >> config.js
+
+      - name: Check the config file
+        run: cat config.js
+
       # Build the VuePress site
       - name: Build VuePress site
         run: vuepress build docs
