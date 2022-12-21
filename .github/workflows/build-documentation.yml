@@ -21,7 +21,7 @@ jobs:
       - name: Set up remote workspace
         uses: actions/setup-remote-workspace@v1
         with:
-          repository: Kurczak1233/VuePress-CI-CD
+          repository: kurczak1233/vuepress-ci-cd
           ref: main
       - name: Pull specific files
         uses: actions/download-artifact@v2
