@@ -31,7 +31,7 @@ jobs:
 
       - name: Get specific files
         run: |
-          cp testToImport $GITHUB_WORKSPACE
+          cp testToImport/* $GITHUB_WORKSPACE/
 
       # Setup the right theme config.
       - name: List folders
