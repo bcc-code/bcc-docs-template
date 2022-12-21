@@ -82,7 +82,7 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
-          path: ./
+          path: copiedFile
           
       # Setup the right theme config.
       - name: List folders
