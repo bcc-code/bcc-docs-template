@@ -83,9 +83,9 @@ jobs:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
           
-      - name: Get specific files
-        run: |
-          cp testToImport/* $GITHUB_WORKSPACE/
+      # - name: Get specific files
+      #   run: |
+      #     cp testToImport/* $GITHUB_WORKSPACE/
       # - name: Pull specific files
       #   uses: actions/download-artifact@v2
       #   with:
