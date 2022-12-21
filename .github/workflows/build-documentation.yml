@@ -87,6 +87,7 @@ jobs:
       # Setup the right theme config.
       - name: List folders
         run: |
+          cd docs
           ls
 
       # Build the VuePress site
