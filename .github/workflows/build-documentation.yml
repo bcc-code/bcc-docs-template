@@ -88,9 +88,9 @@ jobs:
       - name: List folders
         run: |
           ls
-          cp bcc-docs-template/docs/* $GITHUB_WORKSPACE/docs
           cd bcc-docs-template
           ls
+          cp bcc-docs-template/docs/* $GITHUB_WORKSPACE/docs
 
       # Build the VuePress site
       - name: Build VuePress site
