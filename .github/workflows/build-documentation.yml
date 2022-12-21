@@ -17,6 +17,11 @@ jobs:
       # - name: Create VuePress site
       #   run: vuepress init docs
 
+      # Install necessary packages
+      - name: Install necessary packages
+        run: npm i stylus && npm i vuepress-plugin-md-enhance && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
+      # Setup the right theme config.
+
       # Build the VuePress site
       - name: Build VuePress site
         run: vuepress build docs
