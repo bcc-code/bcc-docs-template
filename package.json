@@ -1,0 +1,27 @@
+{
+  "name": "vuepress-theme-bcc-common-components",
+  "version": "1.4.44",
+  "description": "Custom theme for bcc components documentation",
+  "main": "client.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-theme-data": "2.0.0-beta.58",
+    "jsdom": "^20.0.3",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4",
+    "vitest": "^0.26.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.13",
+    "flowbite": "^1.5.4",
+    "glob": "^8.0.3",
+    "globby": "^13.1.2"
+  }
+}
