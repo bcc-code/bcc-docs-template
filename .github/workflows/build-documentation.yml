@@ -39,7 +39,7 @@ jobs:
           echo "import { getSideBarItems } from 'vuepress-theme-bcc-common-components/helpers/getSidebarItems.js';" >> config.js
           echo "const __dirname = getDirname(import.meta.url);" >> config.js
           echo "export default defineUserConfig({" >> config.js
-          echo "lang: "en-US"," >> config.js
+          echo "lang: 'en-US'," >> config.js
           echo "title: 'BCC Developer Documentation'," >> config.js
           echo "description: 'Package documentation'," >> config.js
           echo "base: '/bcc-docs-template/'," >> config.js
