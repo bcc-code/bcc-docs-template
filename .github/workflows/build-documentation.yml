@@ -8,6 +8,9 @@ jobs:
       # Check out the repository
       - name: Check out repository
         uses: actions/checkout@v2
+        with:
+          repository: Kurczak1233/VuePress-CI-CD
+          ref: main
 
       # Install VuePress
       - name: Install VuePress
@@ -18,20 +21,20 @@ jobs:
         run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
       # Pull the repository base config
-      - name: Check out test repository
-        uses: actions/checkout@v2
-        with:
-          repository: Kurczak1233/VuePress-CI-CD
-          ref: main
+      # - name: Check out test repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: Kurczak1233/VuePress-CI-CD
+      #     ref: main
       # - name: Pull specific files
       #   uses: actions/download-artifact@v2
       #   with:
       #     name: tailwind configuration
       #     path: ./testToImport
 
-      - name: Get specific files
-        run: |
-          cp testToImport/* $GITHUB_WORKSPACE/
+      # - name: Get specific files
+      #   run: |
+      #     cp testToImport/* $GITHUB_WORKSPACE/
 
       # Setup the right theme config.
       - name: List folders
