@@ -20,7 +20,8 @@ jobs:
 
       - name: List folders
         run: |
-          cd docs
+          ls
+          cd test
           ls
 
       # - name: List folders
