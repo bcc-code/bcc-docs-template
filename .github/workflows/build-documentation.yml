@@ -34,6 +34,13 @@ jobs:
           cd .vuepress
           echo "const foo = 'bar';" >> config.js
           echo "console.log(foo);" >> config.js
+          echo "import { defineUserConfig } from "vuepress";" >> config.js
+          echo "import { getDirname } from "@vuepress/utils";" >> config.js
+          echo "import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";" >> config.js
+          echo "import { bccCustomTheme } from "vuepress-theme-bcc-common-components/config.js";" >> config.js
+          echo "import { findPathIcons } from "vuepress-theme-bcc-common-components/helpers/findPathIcons.js";" >> config.js
+          echo "import { getSideBarItems } from "vuepress-theme-bcc-common-components/helpers/getSidebarItems.js";" >> config.js
+          echo "const __dirname = getDirname(import.meta.url);" >> config.js
           cat config.js
 
       # Build the VuePress site
