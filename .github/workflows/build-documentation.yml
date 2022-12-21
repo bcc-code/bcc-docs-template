@@ -26,50 +26,50 @@ jobs:
         run: |
           cat package.json
 
-      - name: Navigate to multiple subfolders
-        run: |
-          cd docs
-          mkdir .vuepress
-          cd .vuepress
-          echo "import { defineUserConfig } from 'vuepress';" >> config.js
-          echo "import { getDirname } from '@vuepress/utils';" >> config.js
-          echo "import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';" >> config.js
-          echo "import { bccCustomTheme } from 'vuepress-theme-bcc-common-components/config.js';" >> config.js
-          echo "import { findPathIcons } from 'vuepress-theme-bcc-common-components/helpers/findPathIcons.js';" >> config.js
-          echo "import { getSideBarItems } from 'vuepress-theme-bcc-common-components/helpers/getSidebarItems.js';" >> config.js
-          echo "const __dirname = getDirname(import.meta.url);" >> config.js
-          echo "export default defineUserConfig({" >> config.js
-          echo "lang: 'en-US'," >> config.js
-          echo "title: 'BCC Developer Documentation'," >> config.js
-          echo "description: 'Package documentation'," >> config.js
-          echo "base: '/bcc-docs-template/'," >> config.js
-          echo "theme: bccCustomTheme({" >> config.js
-          echo "logoDark: 'bccLogoWhite.png'," >> config.js
-          echo "logo: 'bccLogoDark.png'," >> config.js
-          echo "sidebar: getSideBarItems(__dirname)," >> config.js
-          echo "icons: findPathIcons(__dirname)," >> config.js
-          echo "navbar: [" >> config.js
-          echo "{" >> config.js
-          echo "text: 'Setup'," >> config.js
-          echo "link: '/Setup.md'," >> config.js
-          echo "}," >> config.js
-          echo "]," >> config.js
-          echo "repo: 'Kurczak1233/bcc-docs-template'," >> config.js
-          echo "docsRepo: 'Kurczak1233/bcc-docs-template'," >> config.js
-          echo "docsDir: 'docs'," >> config.js
-          echo "docsBranch: 'main'," >> config.js
-          echo "editLinks: true," >> config.js
-          echo "editLinkText: 'Edit this page on github'," >> config.js
-          echo "prev: true," >> config.js
-          echo "next: true," >> config.js
-          echo "})," >> config.js
-          echo "plugins: [" >> config.js
-          echo "mdEnhancePlugin({" >> config.js
-          echo "codetabs: true," >> config.js
-          echo "})," >> config.js
-          echo "]," >> config.js
-          echo "});" >> config.js
-          cat config.js
+      # - name: Navigate to multiple subfolders
+      #   run: |
+      #     cd docs
+      #     mkdir .vuepress
+      #     cd .vuepress
+      #     echo "import { defineUserConfig } from 'vuepress';" >> config.js
+      #     echo "import { getDirname } from '@vuepress/utils';" >> config.js
+      #     echo "import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';" >> config.js
+      #     echo "import { bccCustomTheme } from 'vuepress-theme-bcc-common-components/config.js';" >> config.js
+      #     echo "import { findPathIcons } from 'vuepress-theme-bcc-common-components/helpers/findPathIcons.js';" >> config.js
+      #     echo "import { getSideBarItems } from 'vuepress-theme-bcc-common-components/helpers/getSidebarItems.js';" >> config.js
+      #     echo "const __dirname = getDirname(import.meta.url);" >> config.js
+      #     echo "export default defineUserConfig({" >> config.js
+      #     echo "lang: 'en-US'," >> config.js
+      #     echo "title: 'BCC Developer Documentation'," >> config.js
+      #     echo "description: 'Package documentation'," >> config.js
+      #     echo "base: '/bcc-docs-template/'," >> config.js
+      #     echo "theme: bccCustomTheme({" >> config.js
+      #     echo "logoDark: 'bccLogoWhite.png'," >> config.js
+      #     echo "logo: 'bccLogoDark.png'," >> config.js
+      #     echo "sidebar: getSideBarItems(__dirname)," >> config.js
+      #     echo "icons: findPathIcons(__dirname)," >> config.js
+      #     echo "navbar: [" >> config.js
+      #     echo "{" >> config.js
+      #     echo "text: 'Setup'," >> config.js
+      #     echo "link: '/Setup.md'," >> config.js
+      #     echo "}," >> config.js
+      #     echo "]," >> config.js
+      #     echo "repo: 'Kurczak1233/bcc-docs-template'," >> config.js
+      #     echo "docsRepo: 'Kurczak1233/bcc-docs-template'," >> config.js
+      #     echo "docsDir: 'docs'," >> config.js
+      #     echo "docsBranch: 'main'," >> config.js
+      #     echo "editLinks: true," >> config.js
+      #     echo "editLinkText: 'Edit this page on github'," >> config.js
+      #     echo "prev: true," >> config.js
+      #     echo "next: true," >> config.js
+      #     echo "})," >> config.js
+      #     echo "plugins: [" >> config.js
+      #     echo "mdEnhancePlugin({" >> config.js
+      #     echo "codetabs: true," >> config.js
+      #     echo "})," >> config.js
+      #     echo "]," >> config.js
+      #     echo "});" >> config.js
+      #     cat config.js
 
       - name: Add scripts to package.json
         run: |
