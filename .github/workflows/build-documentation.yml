@@ -26,23 +26,13 @@ jobs:
         run: |
           ls
 
-      - name: Check if docs / .vuepress exists
-        run: cd docs
-
-      - name: List folders
+      - name: Navigate to multiple subfolders
         run: |
-          ls
-
-      - name: Check if docs / .vuepress exists
-        run: cd .vuepress
-
-      - name: Inject config into config.js file
-        run:  |
+          cd docs
+          cd .vuepress
           echo "const foo = 'bar';" >> config.js
           echo "console.log(foo);" >> config.js
-
-      - name: Check the config file
-        run: cat config.js
+          cat config.js
 
       # Build the VuePress site
       - name: Build VuePress site
