@@ -27,7 +27,14 @@ jobs:
           ls
 
       - name: Check if docs / .vuepress exists
-        run: cd docs/.vuepress
+        run: cd docs
+
+      - name: List folders
+        run: |
+          ls
+
+      - name: Check if docs / .vuepress exists
+        run: cd .vuepress
 
       - name: Inject config into config.js file
         run:  |
