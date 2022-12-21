@@ -80,9 +80,20 @@ jobs:
       - name: Build VuePress site
         run: yarn docs:build
 
-      # Deploy the built site as an asset to the repository
-      - name: Deploy built site
-        uses: actions/upload-artifact@v1
+      # # Deploy the built site as an asset to the repository
+      # - name: Deploy built site
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: vuepress-site
+      #     path: docs/.vuepress/dist
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          name: vuepress-site
-          path: docs/.vuepress/dist
+          # deploy the default output dir of VuePress
+          build_dir: docs/.vuepress/dist
+          target_branch: gh-pages
+          repo: Kurczak1233/bcc-code.github.io
+        env:
+          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
