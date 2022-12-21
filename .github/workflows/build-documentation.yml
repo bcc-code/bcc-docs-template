@@ -20,7 +20,11 @@ jobs:
       # Install necessary packages
       - name: Install necessary packages
         run: npm i stylus && npm i vuepress-plugin-md-enhance && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
+
       # Setup the right theme config.
+      - name: List folders
+        run: |
+          ls
 
       - name: Check if docs / .vuepress exists
         run: cd docs/.vuepress
