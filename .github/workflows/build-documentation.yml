@@ -29,6 +29,7 @@ jobs:
       - name: Navigate to multiple subfolders
         run: |
           cd docs
+          ls
           cd .vuepress
           echo "const foo = 'bar';" >> config.js
           echo "console.log(foo);" >> config.js
