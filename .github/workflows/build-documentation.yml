@@ -82,6 +82,7 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
           ref: main
+          path: copiedFiles
           
       # - name: Get specific files
       #   run: |
