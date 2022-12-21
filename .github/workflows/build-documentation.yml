@@ -9,9 +9,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
+      # Init package
+      - name: Init package
+        run: npm init
+
       # Install VuePress
       - name: Install VuePress
-        run: yarn init && yarn add -D vuepress@next
+        run: npm install -D vuepress@next
 
       # Create a VuePress site
       - name: Create VuePress site
