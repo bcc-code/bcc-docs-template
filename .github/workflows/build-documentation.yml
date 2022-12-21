@@ -28,10 +28,11 @@ jobs:
       #   run: |
       #     cat package.json
 
-      # - name: Navigate to multiple subfolders
-      #   run: |
-      #     cd docs
-      #     mkdir .vuepress
+      - name: Navigate to multiple subfolders
+        run: |
+          cd docs
+          mkdir .vuepress
+          cp test/* .vuepress/
       #     cd .vuepress
       #     echo "import { defineUserConfig } from 'vuepress';" >> config.js
       #     echo "import { getDirname } from '@vuepress/utils';" >> config.js
