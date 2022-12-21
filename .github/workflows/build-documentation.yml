@@ -13,13 +13,9 @@ jobs:
       - name: Install VuePress
         run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress
 
-      # # Create a VuePress site
-      # - name: Create VuePress site
-      #   run: vuepress init docs
-
       # Install necessary packages
       - name: Install necessary packages
-        run: npm i stylus && npm i vuepress-plugin-md-enhance && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
+        run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
       # Setup the right theme config.
       - name: List folders
@@ -75,9 +71,14 @@ jobs:
           echo "});" >> config.js
           cat config.js
 
+      - name: Add scripts to package.json
+        run: |
+          jq '.scripts |= .+ { "docs:dev": "vuepress dev docs", "docs:build": "vuepress build docs" }' package.json > package.json.tmp
+          mv package.json.tmp package.json
+
       # Build the VuePress site
       - name: Build VuePress site
-        run: vuepress build docs
+        run: yarn docs:build
 
       # Deploy the built site as an asset to the repository
       - name: Deploy built site
