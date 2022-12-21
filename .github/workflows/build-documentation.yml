@@ -27,7 +27,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: tailwind configuration
-          path: testToImport/*
+          path: testToImport
 
       # Setup the right theme config.
       - name: List folders
