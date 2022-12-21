@@ -18,6 +18,7 @@ jobs:
         run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
       # Pull the repository base config
+      - name: Check out test repository
         uses: actions/checkout@v2
         with:
           repository: Kurczak1233/VuePress-CI-CD
@@ -27,10 +28,6 @@ jobs:
         with:
           name: tailwind configuration
           path: testToImport/*
-
-
-
-
 
       # Setup the right theme config.
       - name: List folders
