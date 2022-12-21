@@ -87,11 +87,10 @@ jobs:
       # Setup the right theme config.
       - name: List folders
         run: |
-          ls
           cd bcc-docs-template
           ls
-          cp bcc-docs-template/docs/* $GITHUB_WORKSPACE/docs
 
+#         cp bcc-docs-template/docs/* $GITHUB_WORKSPACE/docs
       # Build the VuePress site
       - name: Build VuePress site
         run: yarn docs:build
