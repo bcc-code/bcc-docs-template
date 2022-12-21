@@ -11,7 +11,7 @@ jobs:
 
       # Install VuePress
       - name: Install VuePress
-        run: npm install -g vuepress
+        run: yarn init && yarn add -D vuepress@next
 
       # Create a VuePress site
       - name: Create VuePress site
