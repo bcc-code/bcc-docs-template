@@ -18,13 +18,6 @@ jobs:
       # - name: Install necessary packages
       #   run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
-      - name: List folders
-        run: |
-          ls
-          cd test
-          ls
-
-
       # - name: List folders
       #   run: |
       #     cat package.json
