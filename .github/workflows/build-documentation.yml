@@ -18,10 +18,11 @@ jobs:
       # - name: Install necessary packages
       #   run: npm i stylus && npm i vuepress-plugin-md-enhance@^2.0.0-beta.130 && npm i vuepress-theme-bcc-common-components && npm i tailwindcss
 
-      # Setup the right theme config.
-      # - name: List folders
-      #   run: |
-      #     ls
+      Setup the right theme config.
+      - name: List folders
+        run: |
+          cd docs
+          ls
 
       # - name: List folders
       #   run: |
@@ -91,7 +92,7 @@ jobs:
           cd source
           cp docs/* $GITHUB_WORKSPACE/docs/
           ls
-          
+
       # Build the VuePress site
       - name: Build VuePress site
         run: yarn docs:build
