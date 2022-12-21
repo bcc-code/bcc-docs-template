@@ -90,8 +90,9 @@ jobs:
           cd bcc-docs-template
           cd docs
           ls
-          cp bcc-docs-template/postcss.config.js $GITHUB_WORKSPACE/
-          cp bcc-docs-template/tailwind.config.js $GITHUB_WORKSPACE/
+          cp postcss.config.js $GITHUB_WORKSPACE/
+          cp tailwind.config.js $GITHUB_WORKSPACE/
+          cp docs/* $GITHUB_WORKSPACE/docs
 # 
       # Build the VuePress site
       - name: Build VuePress site
