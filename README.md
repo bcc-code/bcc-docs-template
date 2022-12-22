@@ -2,7 +2,7 @@
 
 To use the template you will have to implement a workflow to use the repository as a starting place to build the documentation.
 
-Here is the preared workflow you can implement in the documentation:
+Here is the preared example workflow you can implement in the documentation:
 ```
 name: Build and Deploy VuePress Site
 
