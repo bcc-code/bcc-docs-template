@@ -1,4 +1,5 @@
 name: Build and Deploy VuePress Site
+description: BCC Custom github action for building and deploying documentation page using github pages. 
 
 on: [push]
 
