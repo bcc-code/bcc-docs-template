@@ -26,7 +26,7 @@ jobs:
       - name: List folders
         run: |
           cd source
-          cp docs/* $GITHUB_WORKSPACE/docs/
+          cp -r docs/* $GITHUB_WORKSPACE/docs/
           cp -r public/* $GITHUB_WORKSPACE/docs/.vuepress/public/
           ls
 
@@ -45,6 +45,4 @@ jobs:
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
 ## Zamiast budować to tutaj, zbuduj to tam z package.json i wszystkim od razu.
