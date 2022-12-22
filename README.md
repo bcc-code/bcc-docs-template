@@ -52,7 +52,6 @@ jobs:
           # deploy the default output dir of VuePress
           build_dir: docs/.vuepress/dist
           target_branch: gh-pages
-          repo: Kurczak1233/VuePress-CI-CD
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -66,6 +65,5 @@ You will have to adjust the workflow metadata. You can set them in variable subs
   base: /VuePress-CI-CD/
   repo: Kurczak1233/VuePress-CI-CD
     (example)
-  
-Do not forget about changing the repository inside the deploy variable as well:
-  repo: Kurczak1233/VuePress-CI-CD (example)
+
+Especially the base and repository must match the repository name. Otherwise the page won't be compatibile with the github pages.
