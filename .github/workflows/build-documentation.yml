@@ -27,6 +27,7 @@ jobs:
         run: |
           cd source
           cp docs/* $GITHUB_WORKSPACE/docs/
+          cp public/* $GITHUB_WORKSPACE/.vuepress/public/
           ls
 
       # Build the VuePress site
