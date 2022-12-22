@@ -3,7 +3,7 @@
 To use the template you will have to implement a workflow to use the repository as a starting place to build the documentation.
 
 Here is the preared workflow you can implement in the documentation:
-
+```
 name: Build and Deploy VuePress Site
 
 on: [push]
@@ -56,7 +56,7 @@ jobs:
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+```
 
 ## Workflow setup
 
