@@ -28,12 +28,12 @@ jobs:
 
       - uses: microsoft/variable-substitution@v1
         with:
-          files: docs/.vuepress/userConfig.json
+          files: "docs/.vuepress/userConfig.json"
         env:
-          title: "BCC Documentation CI/CD",
-          description: "BCC Documentation description CI/CD",
-          base: "/bcc-docs-template/",
-          repo: "Kurczak1233/bcc-docs-template"
+          title: BCC Documentation CI/CD
+          description: BCC Documentation description CI/CD
+          base: /bcc-docs-template/
+          repo: Kurczak1233/bcc-docs-template
 
       # Build the VuePress site
       - name: Build VuePress site
