@@ -12,9 +12,9 @@ jobs:
         with:
           repository: Kurczak1233/VuePress-CI-CD
 
-      # Install VuePress CLI and vuepress
-      - name: Install VuePress
-        run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress && npm i vuepress-theme-bcc-common-components
+      # # Install VuePress CLI and vuepress
+      # - name: Install VuePress
+      #   run: npm install -D vuepress@next && npm i @vuepress/cli && npm install -g vuepress && npm i vuepress-theme-bcc-common-components
 
       # Pull the repository documentation and push it to the source folder
       - name: Check out test repository
