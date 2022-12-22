@@ -1,5 +1,6 @@
 name: Build and Deploy VuePress Site
-description: BCC Custom github action for building and deploying documentation page using github pages. 
+description: BCC Custom github action for building and deploying documentation page using github pages
+author: Michał Kupczak
 
 on: [push]
 
