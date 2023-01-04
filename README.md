@@ -16,7 +16,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
         with:
-          repository: Kurczak1233/bcc-docs-template 
+          repository: bcc-code/bcc-docs-template
 
       # Pull the repository documentation and push it to the source folder
       - name: Check out test repository
