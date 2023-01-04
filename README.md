@@ -12,19 +12,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Check out the repository
-      - name: Check out repository
+      # Check out the template repository
+      - name: Check out template repository
         uses: actions/checkout@v2
         with:
           repository: bcc-code/bcc-docs-template
 
       # Pull the repository documentation and push it to the source folder
-      - name: Check out test repository
+      - name: Check out current repository
         uses: actions/checkout@v2
         with:
           path: source
 
       # Copy the source documentation to the docs
+      # ** TODO: The cp lines below should be modified to copy the .md files you want to include in the documentation 
+      # ** The "$GITHUB_WORKSPACE/docs/" folder is the target for documenation (.md) files/folder, and the "$GITHUB_WORKSPACE/docs/.vuepress/public/"
+      # ** folder is for static assets (such as logos etc.)
+      # ** Remove any lines that aren't relevant.
       - name: List folders
         run: |
           cd source
@@ -32,14 +36,17 @@ jobs:
           cp -r public/* $GITHUB_WORKSPACE/docs/.vuepress/public/
           ls
 
+      # Configure parameters for documentation page
+      # ** TODO: Consider replacing title with a more friendly name
+      # ** The base and repository must match the repository name. Otherwise the page won't be compatibile with the github pages.
       - uses: microsoft/variable-substitution@v1
         with:
           files: "docs/.vuepress/userConfig.json"
         env:
-          title: BCC Documentation CI/CD
-          description: BCC Documentation description CI/CD
-          base: /VuePress-CI-CD/
-          repo: Kurczak1233/VuePress-CI-CD
+          title: ${{ github.event.repository.name }}
+          description: ${{ github.event.repository.description }}
+          base: /${{ github.event.repository.name }}
+          repo: ${{ github.repository }}
 
       # Build the VuePress site
       - name: Build VuePress site
@@ -57,13 +64,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Workflow setup
-
-You will have to adjust the workflow metadata. You can set them in variable substitution:
-  title: BCC Documentation CI/CD
-  description: BCC Documentation description CI/CD
-  base: /VuePress-CI-CD/
-  repo: Kurczak1233/VuePress-CI-CD
-    (example)
-
-Especially the base and repository must match the repository name. Otherwise the page won't be compatibile with the github pages.
