@@ -6,7 +6,24 @@ Here is the preared example workflow you can implement in the documentation:
 ```
 name: Build and Deploy VuePress Site
 
-on: [push]
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master","main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -33,9 +50,9 @@ jobs:
         run: |
           cd source
           cp -r docs/* $GITHUB_WORKSPACE/docs/
-          cp -r public/* $GITHUB_WORKSPACE/docs/.vuepress/public/
+          # Optional: add static assets such as logos 
+          # cp -r public/* $GITHUB_WORKSPACE/docs/.vuepress/public/
           ls
-
       # Configure parameters for documentation page
       # ** TODO: Consider replacing title with a more friendly name
       # ** The base and repository must match the repository name. Otherwise the page won't be compatibile with the github pages.
@@ -51,16 +68,23 @@ jobs:
       # Build the VuePress site
       - name: Build VuePress site
         run: npm i && yarn docs:build
-
-      # Deploy build
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+     
+      # Upload build output to artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          # deploy the default output dir of VuePress
-          build_dir: docs/.vuepress/dist
-          target_branch: gh-pages
-        env:
-          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: docs/.vuepress/dist
+        
+ # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 ```
 
