@@ -2,5 +2,7 @@
   "title": "BCC Documentation",
   "description": "BCC Documentation description",
   "base": "/bcc-docs-template/",
-  "repo": "Kurczak1233/bcc-docs-template"
+  "repo": "bcc-code/bcc-docs-template",
+  "docsDir": "docs",
+  "branch": "main"
 }

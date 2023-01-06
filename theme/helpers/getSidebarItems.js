@@ -124,6 +124,6 @@ export const getSideBarItems = (__dirname) => {
 };
 
 const capitalizeFirstLetterAndRemoveSpecialChars = (text) => {
-  const reducedText = text.replace(/-/g, " ").replace(/_/g, "");
+  const reducedText = text.replace(/-/g, " ").replace(/_/g, " ");
   return reducedText.charAt(0).toUpperCase() + reducedText.slice(1);
 };

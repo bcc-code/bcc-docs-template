@@ -63,6 +63,8 @@ jobs:
           description: ${{ github.event.repository.description }}
           base: /${{ github.event.repository.name }}/
           repo: ${{ github.repository }}
+          branch: ${{ github.head_ref || github.ref_name || "main" }}
+          docsDir: "docs"
 
       # Build the VuePress site
       - name: Build VuePress site

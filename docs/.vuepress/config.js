@@ -30,9 +30,9 @@ export default defineUserConfig({
     // if your docs are in a different repo from your main project:
     docsRepo: data.repo,
     // if your docs are not at the root of the repo:
-    docsDir: "docs",
+    docsDir: data.docsDir,
     // if your docs are in a specific branch (defaults to 'master'):
-    docsBranch: "main",
+    docsBranch: data.branch,
     // defaults to false, set to true to enable
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
