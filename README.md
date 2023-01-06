@@ -43,9 +43,8 @@ jobs:
 
       # Copy the source documentation to the docs
       # ** TODO: The cp lines below should be modified to copy the .md files you want to include in the documentation 
-      # ** The "$GITHUB_WORKSPACE/docs/" folder is the target for documenation (.md) files/folder, and the "$GITHUB_WORKSPACE/docs/.vuepress/public/"
-      # ** folder is for static assets (such as logos etc.)
-      # ** Remove any lines that aren't relevant.
+      # ** The "$GITHUB_WORKSPACE/docs/" folder is the target for documenation (.md) files/folder. 
+      # ** The "$GITHUB_WORKSPACE/docs/.vuepress/public/" folder is for static assets (such as logos etc.)
       - name: List folders
         run: |
           cd source
@@ -62,7 +61,7 @@ jobs:
         env:
           title: ${{ github.event.repository.name }}
           description: ${{ github.event.repository.description }}
-          base: /${{ github.event.repository.name }}
+          base: /${{ github.event.repository.name }}/
           repo: ${{ github.repository }}
 
       # Build the VuePress site
