@@ -1769,9 +1769,9 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 tough-cookie@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.2.tgz#e53e84b85f24e0b65dd526f46628db6c85f6b874"
-  integrity sha512-G9fqXWoYFZgTc2z8Q5zaHy/vJMjm+WV0AkAeHxVCQiEB1b+dGvWzFW6QV07cY5jQ5gRkeid2qIkzkxUnmoQZUQ==
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.3.tgz#97b9adb0728b42280aa3d814b6b999b2ff0318bf"
+  integrity sha512-aX/y5pVRkfRnfmuX+OdbSdXvPe6ieKX/G2s7e98f4poJHnqH3281gDPm/metm6E/WRamfx7WC4HUqkWHfQHprw==
   dependencies:
     psl "^1.1.33"
     punycode "^2.1.1"
@@ -1905,26 +1905,6 @@ vue@^3.2.45:
     "@vue/runtime-dom" "3.2.45"
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
-
-vuepress-theme-bcc-common-components@^1.3.10:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bcc-common-components/-/vuepress-theme-bcc-common-components-1.3.10.tgz#cb6edd3c5825a077d9633977e67d511d71e21804"
-  integrity sha512-wZQWOaaFQIPvTbAtLpN+Dc67L68iXU2cAH/gDOF2VGwpW5ls+Ky8NamytRIboCCKmFjcfxBZi4/32NIpB+Tztw==
-  dependencies:
-    flowbite "^1.5.4"
-    globby "^13.1.2"
-
-vuepress-theme-bcc-common-components@^1.4.36:
-  version "1.4.36"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bcc-common-components/-/vuepress-theme-bcc-common-components-1.4.36.tgz#608d5c333a2dddf61f659de75559b4875da366da"
-  integrity sha512-v2xPwwW4uwNw9aQeSwveM5d5y39Up5LiSPGLUoaB89fdNNUT3Op+9L8B4vVxOGth6UJQFzzbnkLH1jXOMykrEw==
-  dependencies:
-    "@vitejs/plugin-vue" "^4.0.0"
-    autoprefixer "^10.4.13"
-    flowbite "^1.5.4"
-    glob "^8.0.3"
-    globby "^13.1.2"
-    vuepress-theme-bcc-common-components "^1.3.10"
 
 w3c-xmlserializer@^4.0.0:
   version "4.0.0"
