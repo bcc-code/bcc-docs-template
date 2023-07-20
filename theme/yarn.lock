@@ -1906,26 +1906,6 @@ vue@^3.2.45:
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
 
-vuepress-theme-bcc-common-components@^1.3.10:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bcc-common-components/-/vuepress-theme-bcc-common-components-1.3.10.tgz#cb6edd3c5825a077d9633977e67d511d71e21804"
-  integrity sha512-wZQWOaaFQIPvTbAtLpN+Dc67L68iXU2cAH/gDOF2VGwpW5ls+Ky8NamytRIboCCKmFjcfxBZi4/32NIpB+Tztw==
-  dependencies:
-    flowbite "^1.5.4"
-    globby "^13.1.2"
-
-vuepress-theme-bcc-common-components@^1.4.36:
-  version "1.4.36"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bcc-common-components/-/vuepress-theme-bcc-common-components-1.4.36.tgz#608d5c333a2dddf61f659de75559b4875da366da"
-  integrity sha512-v2xPwwW4uwNw9aQeSwveM5d5y39Up5LiSPGLUoaB89fdNNUT3Op+9L8B4vVxOGth6UJQFzzbnkLH1jXOMykrEw==
-  dependencies:
-    "@vitejs/plugin-vue" "^4.0.0"
-    autoprefixer "^10.4.13"
-    flowbite "^1.5.4"
-    glob "^8.0.3"
-    globby "^13.1.2"
-    vuepress-theme-bcc-common-components "^1.3.10"
-
 w3c-xmlserializer@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/w3c-xmlserializer/-/w3c-xmlserializer-4.0.0.tgz#aebdc84920d806222936e3cdce408e32488a3073"
@@ -1966,9 +1946,9 @@ whatwg-url@^11.0.0:
     webidl-conversions "^7.0.0"
 
 word-wrap@~1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
-  integrity sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.4.tgz#cb4b50ec9aca570abd1f52f33cd45b6c61739a9f"
+  integrity sha512-2V81OA4ugVo5pRo46hAoD2ivUJx8jXmWXfUkY4KFNw0hEptvN0QfH3K4nHiwzGeKl5rFKedV48QVoqYavy4YpA==
 
 wrappy@1:
   version "1.0.2"
